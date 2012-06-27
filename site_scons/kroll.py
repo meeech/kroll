@@ -121,7 +121,7 @@ class BuildConfig(object):
 
 	def init_os_arch(self):
 		if self.is_linux() and self.is_64():
-			self.env.Append(CPPFLAGS=['-m64', '-Wall', '-Werror','-fno-common', '-fvisibility=hidden', '-fno-strict-aliasing'])
+			self.env.Append(CPPFLAGS=['-m64', '-Wall','-fno-common', '-fvisibility=hidden', '-fno-strict-aliasing'])
 			self.env.Append(LINKFLAGS=['-m64 -lgcrypt.so'])
 			self.env.Append(CPPDEFINES = ('OS_64', 1))
 		elif self.is_linux() or self.is_osx():
@@ -132,9 +132,9 @@ class BuildConfig(object):
 			self.env.Append(CPPDEFINES = ('OS_32', 1))
 
 		if self.is_osx():
-			sdk_dir = '/Developer/SDKs/MacOSX10.5.sdk'
-			sdk_minversion = '-mmacosx-version-min=10.5'
-			self.env['MACOSX_DEPLOYMENT_TARGET'] = '10.5'
+			sdk_dir = '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk'
+			sdk_minversion = '-mmacosx-version-min=10.7'
+			self.env['MACOSX_DEPLOYMENT_TARGET'] = '10.7'
 
 			self.env['CC'] = ['gcc', '-arch', 'i386']
 			self.env['CXX'] = ['g++', '-arch', 'i386']
