@@ -46,7 +46,7 @@ class BuildConfig(object):
 		vars.Add('CONFIG_FILENAME','The name of the Kroll config file', kwargs['CONFIG_FILENAME'])
 		vars.Add('DISTRIBUTION_URL','The base URL of all streams', kwargs['DISTRIBUTION_URL'])
 		vars.Add('CRASH_REPORT_URL','The URL to send crash dumps to', kwargs['CRASH_REPORT_URL'])
-		vars.Add('MSVC_VERSION', '', '8.0')
+		vars.Add('MSVC_VERSION', '', '10.0')
 
 		def add_environ_arg(key, description, default):
 			default_value = default
@@ -54,11 +54,11 @@ class BuildConfig(object):
 				default_value = os.environ[key]
 			vars.Add(key, description, default_value)
 
-		add_environ_arg('MSPSDK', 'Path of the Microsoft Platform SDK', 'C:\\Program Files\\Microsoft Platform SDK for Windows Server 2003 R2')
-		add_environ_arg('MSVS', 'Path of Microsoft Visual Studio', 'C:\\Program Files\\Microsoft Visual Studio 8')
+		add_environ_arg('MSPSDK', 'Path of the Microsoft Platform SDK', 'C:\\Program Files\\Microsoft SDKs\\Windows\\v7.0A')
+		add_environ_arg('MSVS', 'Path of Microsoft Visual Studio', 'C:\\Program Files\\Microsoft Visual Studio 10.0')
 		add_environ_arg('PKG_CONFIG_PATH', 'The path for pkg-config', '/usr/lib/pkgconfig')
-		add_environ_arg('PYTHON_VERSION', 'The version of Python to build against', '2.6')
-		add_environ_arg('PYTHON_INCLUDE', 'The Python include directory', '/usr/include/python2.6')
+		add_environ_arg('PYTHON_VERSION', 'The version of Python to build against', '2.7')
+		add_environ_arg('PYTHON_INCLUDE', 'The Python include directory', '/usr/include/python2.7')
 
 		self.env = SCons.Environment.Environment(variables = vars)
 		self.utils = utils.BuildUtils(self)
