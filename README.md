@@ -1,12 +1,15 @@
+## About Kroll
+
 Kroll is the pyrometallurgical industrial process used to produce titanium. 
 It's a microkernel.
-
+```
  _              _ _ 
 | | ___ __ ___ | | |
 | |/ / '__/ _ \| | |
 |   <| | | (_) | | |
 |_|\_\_|  \___/|_|_|
 
+```
 
 Kroll is a compact microkernel written in C++ for running pluggable
 modules. Kroll supports a cross-language, cross-platform "binding"
@@ -32,15 +35,14 @@ target list to be added soon:
 - C# (maybe via Mono)
 - Java 
 
-The Module API
---------------
+## The Module API
+
 
 The Module API is rather simple but powerful.  You can write modules
 in C++ or even in the supported languages like Python.  The module
 can really do anything it wants once it's loaded.
 
-The Binding API
----------------
+## The Binding API
 
 The Module communicates to other modules through "binding". Binding
 is the process of either adding values (primitive, objects, functions etc)
@@ -54,8 +56,7 @@ runtime. This is the key part of the magic of Kroll.
 Once bound, you can invoke a function from Ruby which might take a Python 
 function as a reference and return a Javascript object.
 
-Kroll
------
+## Kroll
 
 Kroll itself is the microkernel and set of base modules. As a standalone,
 it's really not that useful (yet).  The power of Kroll is when it's used
@@ -67,63 +68,65 @@ such as the windowing environment.  <http://www.appcelerator.com>
 
 
 
-Build
------
+## Build
 
 Here are some build specific notes for each platform.
 
-Win32:
-======
+### Win32
 
 You will need Visual Studio 2005 + Service Pack 1 for the build to work.
 
-OSX:
-====
+### OSX
 
 You will need universal version of installed libraries to build.
 
 You can get the universal versions by running:
 
-> sudo port deactivate libxml2
-> sudo port deactivate libiconv
-> sudo port deactivate zlib
+```
+$ sudo port deactivate libxml2
+$ sudo port deactivate libiconv
+$ sudo port deactivate zlib
+```
 
 This should deactivate and then you can run:
 
-> sudo port install zlib +universal
-> sudo port install libiconv +universal
-> sudo port install libxml2 +universal
+```
+$ sudo port install zlib +universal
+$ sudo port install libiconv +universal
+$ sudo port install libxml2 +universal
+```
 
 This will install the universal versions of these libraries.
 
-Linux
-=====
+### Linux
 
 You'll need to base libraries to build.  For unbuntu,
 
 sudo apt-get install the following:
 
-> build-essential 
-> ruby 
-> rubygems 
-> libzip-ruby 
-> scons 
-> libxml2-dev 
-> libgtk2.0-dev 
-> python-dev 
-> ruby-dev
+```
+$ build-essential 
+$ ruby 
+$ rubygems 
+$ libzip-ruby 
+$ scons 
+$ libxml2-dev 
+$ libgtk2.0-dev 
+$ python-dev 
+$ ruby-dev
+```
 
 You'll need git if you planning on committing:
 
+```
 sudo apt-get install git-core
+```
 
+## Legal Stuff
 
--------------
- Legal Stuff
--------------
-
-Copyright (C) 2008-2009 by Appcelerator, Inc. All Rights Reserved.
+Copyright (c) 2012 by David Pratt (For TideSDK)
+Copyright (c) 2008-2009 by Appcelerator, Inc. All Rights Reserved.
 For more information, please visit <http://license.appcelerator.org>.
 Appcelerator, Titanium and logos are trademark of Appcelerator, Inc.
 
-Please see the file named LICENSE for the full license.
+Please refer to LICENSE for the full details.
