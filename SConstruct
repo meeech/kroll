@@ -6,13 +6,13 @@ debug = False
 Import('*')
 
 # this will ensure that you're using the right version of scons
-EnsureSConsVersion(1,2,0)
+EnsureSConsVersion(2,0,1)
 # this will ensure that you're using the right version of python
-EnsurePythonVersion(2,5)
+EnsurePythonVersion(2,7)
 
 
 build = BuildConfig(
-	PRODUCT_VERSION = '0.1',
+	PRODUCT_VERSION = '0.1.1',
 	PRODUCT_NAME = 'Kroll',
 	GLOBAL_NS_VARNAME = 'kroll',
 	CONFIG_FILENAME = 'tiapp.xml',
