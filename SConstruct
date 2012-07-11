@@ -12,7 +12,7 @@ EnsurePythonVersion(2,7)
 
 
 build = BuildConfig(
-	PRODUCT_VERSION = '0.1.1',
+	PRODUCT_VERSION = '0.1.2',
 	PRODUCT_NAME = 'Kroll',
 	GLOBAL_NS_VARNAME = 'kroll',
 	CONFIG_FILENAME = 'tiapp.xml',
