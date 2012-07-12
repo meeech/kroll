@@ -132,9 +132,14 @@ class BuildConfig(object):
       self.env.Append(CPPDEFINES = ('OS_32', 1))
     
     if self.is_osx():
-      sdk_dir = '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.6.sdk'
-      if(os.path.exists('/Developer/SDKs/MacOSX10.6.sdk')):
-        sdk_minversion = '-mmacosx-version-min=10.6'
+      #Start with original 10.6 dev folder
+      #If the newer one is found, prefer that.
+      sdk_dir = '/Developer/SDKs/MacOSX10.6.sdk';
+      app_store_sdk_dir = '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.6.sdk'
+      if(os.path.exists(app_store_sdk_dir)):
+          sdk_dir = app_store_sdk_dir
+
+      sdk_minversion = '-mmacosx-version-min=10.6'
       self.env['MACOSX_DEPLOYMENT_TARGET'] = '10.6'
       
       self.env['CC'] = ['gcc', '-arch', 'i386']
