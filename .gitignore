@@ -6,3 +6,4 @@ docs
 thirdparty-*
 *.swp
 *.swo
+build/*
